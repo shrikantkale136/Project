@@ -52,6 +52,8 @@ public class UserLoginServlet extends HttpServlet {
                 HttpSession session = req.getSession();
                 session.setAttribute("authenticated", true);
                 session.setAttribute("userName", req.getParameter("userName"));
+                session.setAttribute("userID", user.getUserID());
+                session.setAttribute("user", user);
                 req.getRequestDispatcher("views/dashboard/profile.jsp").forward(req, resp);
             }
             else {

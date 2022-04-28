@@ -5,7 +5,7 @@
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    BlogDao bd = new BlogDao(DBConnection.createDBConnection());
+    BlogDao bd = new BlogDao();
     List<Blog> blogs = bd.getAllProducts();
 %>
 <!DOCTYPE html>
