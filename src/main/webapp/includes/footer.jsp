@@ -1,6 +1,6 @@
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="footer mt-auto py-3">
     <div class="container">
-        <span class="text-muted text-center">Developed by @Shrikant</span>
+        <span class=" text-center">Developed by @Shrikant</span>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

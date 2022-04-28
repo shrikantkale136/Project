@@ -9,9 +9,10 @@
 <html>
 <%@include file="/includes/head.jsp"%>
 <body>
+<%@include file="/includes/navbar.jsp"%>
 <div class="container">
     <div class="card w-50 mx-auto my-5">
-        <div class="card-header text-center">User Login</div>
+        <div class="text-center"><h4>--- User Login --- </h4></div>
         <div class="card-body">
 <%--            <c:if test="${not empty result}">--%>
 <%--                <div class="alert alert-danger" role="alert">--%>
