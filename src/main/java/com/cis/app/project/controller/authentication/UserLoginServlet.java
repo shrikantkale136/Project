@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -45,8 +46,12 @@ public class UserLoginServlet extends HttpServlet {
             if(user.getPassword().equals(req.getParameter("password"))) {
                 result = "User Authenticated";
                 System.out.println("SUCCESS : "+result);
+                req.setAttribute("user",user);
                 req.setAttribute("userID", user.getUserID());
                 req.setAttribute("username", req.getParameter("userName"));
+                HttpSession session = req.getSession();
+                session.setAttribute("authenticated", true);
+                session.setAttribute("userName", req.getParameter("userName"));
                 req.getRequestDispatcher("views/dashboard/profile.jsp").forward(req, resp);
             }
             else {
