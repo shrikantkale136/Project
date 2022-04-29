@@ -1,6 +1,8 @@
 package com.cis.app.project.controller.authentication;
 
+import com.cis.app.project.dao.BlogDao;
 import com.cis.app.project.dao.UserDao;
+import com.cis.app.project.model.Blog;
 import com.cis.app.project.model.UserLogin;
 
 import javax.servlet.ServletException;
@@ -11,11 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet("/LoginUser")
 public class UserLoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
+    BlogDao blobDao = new BlogDao();
     UserDao userDAO = new UserDao();
 
     public UserLoginServlet() {
@@ -46,6 +49,8 @@ public class UserLoginServlet extends HttpServlet {
             if(user.getPassword().equals(req.getParameter("password"))) {
                 result = "User Authenticated";
                 System.out.println("SUCCESS : "+result);
+                List<Blog> blogsList = blobDao.getAllProductsById(user.getUserID());
+                req.setAttribute("blogsList",blogsList);
                 req.setAttribute("user",user);
                 req.setAttribute("userID", user.getUserID());
                 req.setAttribute("username", req.getParameter("userName"));

@@ -11,7 +11,7 @@
 <body>
 <%@include file="/includes/navbar.jsp"%>
 <div class="container">
-    <div class="card w-50 mx-auto my-5">
+    <div class="card w-35 mx-auto my-5">
         <div class="text-center"><h4>--- User Login --- </h4></div>
         <div class="card-body">
 <%--            <c:if test="${not empty result}">--%>

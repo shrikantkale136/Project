@@ -3,6 +3,9 @@ body{
     flex-direction: column;
     height: 100vh;
 }
+.card-body{
+    padding: 0!important;
+}
 footer{
     /*position: fixed;*/
     height: 50px;
@@ -13,6 +16,9 @@ footer{
     text-align: center;
     background: #434343;
     color: #ffffff;
+}
+.w-35{
+    width: 35% !important;
 }
 form{
     margin: auto;
