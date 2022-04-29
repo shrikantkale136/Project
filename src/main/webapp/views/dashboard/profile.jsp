@@ -21,8 +21,10 @@
 <%--        throw new RuntimeException(e);--%>
 <%--    }--%>
 <%--%>--%>
+<%
+    List<Blog> Lists = (List)request.getAttribute("blogsList");
+%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <%@include file="/includes/head.jsp"%>
 <body>
@@ -66,11 +68,12 @@
         </div>
         <hr>
         <div class="container-fluid">
-            <div class="text-center"><h4>My Blogs</h4></div>
             <div class="row gutters">
                 <%
-                    List<Blog> Lists = (List)request.getAttribute("blogsList");
                     if (!Lists.isEmpty()) {
+                %>
+                <div class="text-center"><h4>My Blogs</h4></div>
+                <%
                         for (Blog blog : Lists) {
                 %>
 
@@ -87,9 +90,13 @@
                                 <p><%=(blog.getContent())%></p>
                             </div>
                             <div class="col-2">
-                                <button type="button" class="close" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <form method="post" action="DeleteBlog">
+                                    <input hidden id="blogID" name="blogID" value="<%=blog.getBlogID()%>"/>
+                                    <input hidden id="userID" name="userID" value="<%=blog.getUserID()%>"/>
+                                    <button type="submit" class="close" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

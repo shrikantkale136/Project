@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.List;
+
 @WebServlet("/NewBlog")
 public class CreateBlogServlet extends HttpServlet {
     BlogDao blogDao = new BlogDao();
@@ -45,6 +47,7 @@ public class CreateBlogServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         Blog blog = new Blog();
+        List<Blog> blogsList = blogDao.getAllProductsById((Integer) session.getAttribute("userID"));
         blog.setUserID((Integer) session.getAttribute("userID"));
         blog.setTitle(request.getParameter("title"));
         blog.setSubtitle(request.getParameter("subtitle"));
@@ -63,6 +66,7 @@ public class CreateBlogServlet extends HttpServlet {
             System.out.println("FAIL : " +result);
         }
         request.setAttribute("result", result);
+        request.setAttribute("blogsList",blogsList);
         request.setAttribute("user", session.getAttribute("user"));
         request.getRequestDispatcher("views/dashboard/profile.jsp").forward(request, response);
 

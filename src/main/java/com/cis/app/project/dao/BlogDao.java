@@ -95,11 +95,11 @@ public class BlogDao {
         return blogList;
     }
 
-    public String deleteBlog(int userID) throws SQLException, ClassNotFoundException {
+    public String deleteBlog(int blogID) throws SQLException, ClassNotFoundException {
         String status;
         connection = DBConnection.createDBConnection();
         Statement stmt = connection.createStatement();
-        String sql = "DELETE FROM blog where userID="+userID;
+        String sql = "DELETE FROM blog where blogID="+blogID;
         int count = stmt.executeUpdate(sql);
         if(count==1) {
             status = "SUCCESS";
