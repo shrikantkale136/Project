@@ -14,7 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-
+/*
+* Servlet is to get User Profile information
+* after user logged in the system using their credentials.
+* */
 @WebServlet("/userProfile")
 public class userProfile extends HttpServlet {
     private static final long serialVersionUID = 1L;

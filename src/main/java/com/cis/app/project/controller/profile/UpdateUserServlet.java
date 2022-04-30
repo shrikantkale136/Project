@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-
+/*
+* Servlet to update user information
+*
+* */
 @WebServlet("/UpdateUser")
 public class UpdateUserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;

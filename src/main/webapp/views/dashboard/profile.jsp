@@ -50,7 +50,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body py-5 text-center">
+                    <div class="card-body py-5 text-center mt-3">
                         <button class="btn btn-edit" onclick="showProfile(2)">Create Blog</button>
                     </div>
                 </div>
@@ -69,11 +69,9 @@
         <hr>
         <div class="container-fluid">
             <div class="row gutters">
-                <%
-                    if (!Lists.isEmpty()) {
-                %>
                 <div class="text-center"><h4>My Blogs</h4></div>
                 <%
+                    if (!Lists.isEmpty()) {
                         for (Blog blog : Lists) {
                 %>
 

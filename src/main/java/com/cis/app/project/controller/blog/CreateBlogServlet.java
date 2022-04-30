@@ -15,7 +15,9 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
-
+/*
+* Servlet is to create new blog
+* */
 @WebServlet("/NewBlog")
 public class CreateBlogServlet extends HttpServlet {
     BlogDao blogDao = new BlogDao();

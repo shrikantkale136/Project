@@ -3,7 +3,7 @@
 	<div class="container">
 		<a class="navbar-brand" href="index.jsp">
 			<img src="images/logo.png" width="35px">
-			Project
+			UCM Blogs
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
