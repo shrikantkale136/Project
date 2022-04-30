@@ -23,6 +23,8 @@ public class UserDao {
             user.setAddress(rs.getString(4));
             user.setUserName(rs.getString(5));
             user.setPassword(rs.getString(6));
+            user.setEmail(rs.getString(7));
+            user.setAbout(rs.getString(8));
             users.add(user);
         }
         connection.close();
@@ -42,6 +44,8 @@ public class UserDao {
             user.setAddress(rs.getString(4));
             user.setUserName(rs.getString(5));
             user.setPassword(rs.getString(6));
+            user.setEmail(rs.getString(7));
+            user.setAbout(rs.getString(8));
         }
         return user;
     }
@@ -53,13 +57,14 @@ public class UserDao {
         UserLogin userDB = getUser(user.getUserName());
         if(userDB.getUserName()==null) {
             connection = DBConnection.createDBConnection();
-            String query = "INSERT INTO user(userID, firstName,lastName,address, userName, password) VALUES (NULL,?,?,?,?,?)";
+            String query = "INSERT INTO user(userID, firstName,lastName,address, userName, password, email, about) VALUES (NULL,?,?,?,?,?,?,NULL)";
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, user.getFirstName());
             stmt.setString(2, user.getLastName());
             stmt.setString(3, user.getAddress());
             stmt.setString(4, user.getUserName());
             stmt.setString(5, user.getPassword());
+            stmt.setString(6, user.getEmail());
             stmt.executeUpdate();
             status = "SUCCESS";
         }
@@ -75,7 +80,7 @@ public class UserDao {
         String status;
         connection = DBConnection.createDBConnection();
         Statement stmt = connection.createStatement();
-        String sql = "UPDATE USER SET FirstName='" +user.getFirstName()+ "', LastName='" +user.getLastName()+ "', Address='" +user.getAddress()+ "' where UserName='" +user.getUserName()+ "'";
+        String sql = "UPDATE USER SET FirstName='" +user.getFirstName()+ "', LastName='" +user.getLastName()+ "', Address='" +user.getAddress() + "', Email='" +user.getEmail() + "', About='" +user.getAbout() + "' where UserName='" + user.getUserName() +"'";
         int count = stmt.executeUpdate(sql);
         if(count==1) {
             status = "SUCCESS";
