@@ -1,0 +1,27 @@
+-- user table
+create table user
+(
+    userID    int auto_increment
+        primary key,
+    firstName char(255) null,
+    lastName  char(255) null,
+    address   char(255) null,
+    userName  char(255) null,
+    password  char(255) null,
+    email     char(255) null,
+    about     char(255) null
+);
+
+-- blog table
+
+create table blog
+(
+    blogID    int auto_increment
+        primary key,
+    userID    int       null,
+    title     char(255) null,
+    subtitle  char(255) null,
+    content   char(255) null,
+    author    char(255) null,
+    timestamp timestamp null
+);
