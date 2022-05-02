@@ -9,7 +9,7 @@ body{
 }
 footer{
     /*position: fixed;*/
-    height: 50px;
+    /*height: 50px;*/
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -40,6 +40,21 @@ form{
     border: none;
     cursor: pointer;
 }
+/*nav link profile*/
+.nav-borders .nav-link.active {
+    color: #0061f2;
+    border-bottom-color: #0061f2;
+}
+.nav-borders .nav-link {
+    color: #69707a;
+    border-bottom-width: 0.125rem;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    padding: 0.5rem 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+/**/
 .card{
     padding: 25px;
     box-shadow: 4px 4px 11px -3px #bfbfbf;
@@ -128,4 +143,7 @@ a {
     color: white;
     background-color: #0f8aa2;
     border-color: #0f8aa2;
+}
+.btn{
+    border-radius: 0px!important;
 }

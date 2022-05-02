@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: shrikantkale
@@ -12,35 +13,40 @@
 <%@include file="/includes/navbar.jsp"%>
 <div class="container">
     <div class="card w-35 mx-auto my-5">
-        <div class="text-center"><h4>--- Register ---</h4></div>
+        <div class="text-center"><h4> Sign Up</h4></div>
         <div class="card-body">
-            <form action="AddUser" method="post">
+            <c:if test="${not empty result}">
+                <div class="alert alert-danger" role="alert">
+                        ${result}
+                </div>
+            </c:if>
+            <form action="AddUser" method="post" >
                 <div class="form-group">
                     <label>First name</label>
-                    <input type="text" name="firstName" class="form-control" placeholder="Enter first name">
+                    <input type="text" name="firstName" class="form-control" placeholder="Enter first name" required>
                 </div>
                 <div class="form-group">
                     <label>Last name</label>
-                    <input type="text" name="lastName" class="form-control" placeholder="Enter last name">
+                    <input type="text" name="lastName" class="form-control" placeholder="Enter last name" required>
                 </div>
                 <div class="form-group">
                     <label>Address</label>
-                    <input type="text" name="address" class="form-control" placeholder="Enter address">
+                    <input type="text" name="address" class="form-control" placeholder="Enter address" required>
                 </div>
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" name="userName" class="form-control" placeholder="Enter username">
+                    <input type="text" name="userName" class="form-control" placeholder="Enter username" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" name="password" class="form-control" placeholder="Enter password">
+                    <input type="password" name="password" class="form-control" placeholder="Enter password" required>
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Register</button>
                 </div>
             </form>
             <form action="LoginPage">
-                <button type="submit">Login</button>
+                <button class="btn" type="submit">Login</button>
             </form>
         </div>
     </div>

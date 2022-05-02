@@ -23,9 +23,9 @@
                   cols=""></textarea>
     </div>
 
-    <div class="form-group py-2">
-        <button type="submit" class="btn btn-primary">Create</button>
+    <div class="form-group text-center py-2">
         <button type="reset" class="btn btn-danger">Cancel</button>
+        <button type="submit" class="btn btn-primary">Create</button>
     </div>
 
 

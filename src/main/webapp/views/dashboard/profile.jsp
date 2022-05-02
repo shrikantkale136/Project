@@ -29,7 +29,10 @@
 <%@include file="/includes/head.jsp"%>
 <body>
     <%@include file="/includes/navbar.jsp"%>
+
     <div class="container">
+<%--        <%@include file="/includes/profile-navbar.jsp"%>--%>
+
         <div class="row gutters">
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                 <div class="profile-card h-100">

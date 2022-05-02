@@ -24,7 +24,7 @@
 
 				<li class="nav-item">
 					<form action="${pageContext.request.contextPath}/LoginPage">
-						<button class="navLink" type="submit">Login</button>
+						<button class="navLink" type="submit"> <i class="fa fa-lock pr-1"></i> Login</button>
 					</form>
 				</li>
 				<%

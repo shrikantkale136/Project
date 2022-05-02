@@ -1,5 +1,6 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<%@ page import="com.cis.app.project.utility.DBConnection" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
+<%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="com.cis.app.project.dao.BlogDao" %>
 <%@ page import="com.cis.app.project.model.Blog" %>
 <%@ page import="java.util.List" %>
@@ -7,6 +8,8 @@
 <%
     BlogDao bd = new BlogDao();
     List<Blog> blogs = bd.getAllProducts();
+
+    SimpleDateFormat formatter=new SimpleDateFormat("EEEE, MMMM d, yyyy hh:mm a");
 %>
 <!DOCTYPE html>
 <html>
@@ -29,7 +32,7 @@
                     <small>
                         <i class="fa fa-clock-o" aria-hidden="true"></i>
                         Post by <%=(blog.getAuthor()) %>,
-                        <%=(blog.getTimestamp()) %>
+                        <%=formatter.format(blog.getTimestamp()) %>
                     </small><br>
                     <p><%=(blog.getContent())%></p>
                 </div>

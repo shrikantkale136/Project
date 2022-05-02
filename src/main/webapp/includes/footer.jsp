@@ -1,6 +1,7 @@
-<footer class="footer mt-auto py-3">
+<footer class="footer mt-auto py-4">
     <div class="container">
-        <span class=" text-center">Developed by @Shrikant</span>
+        <span class=" text-center">Developed by Group 9 - Shrikant & David</span><br>
+        <span class="text center"> Advanced Java Programming</span>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

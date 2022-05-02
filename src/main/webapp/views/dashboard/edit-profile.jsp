@@ -39,14 +39,14 @@
     </div>
 
     <div class="form-group">
-        <label for="password">password <span class="require">*</span></label>
+        <label for="password">Password <span class="require">*</span></label>
         <input id="password" type="text" class="form-control" name="password" value="${user.password}"/>
     </div>
 
 
-    <div class="form-group py-2">
-        <button type="submit" class="btn btn-primary">Update</button>
+    <div class="form-group text-center py-2">
         <button type="reset" class="btn btn-danger">Cancel</button>
+        <button type="submit" class="btn btn-success">Update</button>
     </div>
 
 </form>

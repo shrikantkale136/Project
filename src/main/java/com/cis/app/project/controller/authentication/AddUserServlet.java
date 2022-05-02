@@ -55,6 +55,7 @@ public class AddUserServlet extends HttpServlet {
         else {
             result = "User Creation Failed. Please Sign up again!";
             System.out.println("FAIL : " +result);
+            req.getRequestDispatcher("views/authentication/signup.jsp").forward(req, resp);
         }
         req.setAttribute("result", result);
         req.getRequestDispatcher("views/authentication/login.jsp").forward(req, resp);
