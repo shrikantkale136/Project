@@ -1,6 +1,8 @@
 package com.cis.app.project.controller.profile;
 
+import com.cis.app.project.dao.BlogDao;
 import com.cis.app.project.dao.UserDao;
+import com.cis.app.project.model.Blog;
 import com.cis.app.project.model.UserLogin;
 
 import javax.servlet.RequestDispatcher;
@@ -9,8 +11,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
+
 /*
 * Servlet to update user information
 *
@@ -19,7 +24,7 @@ import java.sql.SQLException;
 public class UpdateUserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     UserDao userDAO = new UserDao();
-
+    BlogDao blobDao = new BlogDao();
     public UpdateUserServlet() {
         super();
     }
@@ -50,6 +55,10 @@ public class UpdateUserServlet extends HttpServlet {
         user.setPassword(request.getParameter("password"));
         user.setEmail(request.getParameter("email"));
         user.setAbout(request.getParameter("about"));
+
+        HttpSession session = request.getSession();
+        List<Blog> blogsList = blobDao.getAllProductsById((Integer) session.getAttribute("userID"));
+        request.setAttribute("blogsList",blogsList);
 
         RequestDispatcher dispatcher;
         request.setAttribute("user", user);

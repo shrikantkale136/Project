@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DBConnection {
     public static Connection createDBConnection() throws ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        final String DB_URL = "jdbc:mysql://localhost:3306/hospital";
+        final String DB_URL = "jdbc:mysql://localhost:3306/BlogDB";
         final String USERNAME = "root";
         final String PASSWORD = "gismaster";
         Connection con = null;

@@ -74,7 +74,6 @@
             <div class="row gutters">
                 <div class="text-center"><h4>My Blogs</h4></div>
                 <%
-                    if (!Lists.isEmpty()) {
                         for (Blog blog : Lists) {
                 %>
 
@@ -103,7 +102,6 @@
                     </div>
                 </div>
                 <%
-                        }
                     }
                 %>
             </div>
